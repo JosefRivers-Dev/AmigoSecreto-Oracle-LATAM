@@ -38,7 +38,7 @@ function agregarAmigo() {
     actualizarListaAmigos();
   }
   
-  // ********** Función para actualizar la lista de amigos **********
+// ********** Función para actualizar la lista de amigos **********
 
 function actualizarListaAmigos() {
   const listaAmigosElement = document.getElementById('listaAmigos');
@@ -49,4 +49,23 @@ function actualizarListaAmigos() {
     li.textContent = amigo;
     listaAmigosElement.appendChild(li);
   });
+}
+
+// ********** Función para sortear un amigo al azar **********
+
+function sortearAmigo() {
+  if (listaAmigos.length === 1) {
+    alert('Debes agregar al menos un nombre para realizar el sorteo.');
+    return;
+  }
+
+  //console.log(listaAmigos.length) // Generar el numero de elementos agragados a la lista
+
+  const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+  const amigoSeleccionado = listaAmigos[indiceAleatorio];
+
+  console.log(indiceAleatorio);
+  console.log(amigoSeleccionado);
+
+  mostrarResultado(amigoSeleccionado);
 }
