@@ -15,3 +15,26 @@ Funciones principales que se tiene que implementar (Trello)
 let listaAmigos = [];
 
 //console.log(listaAmigos)
+
+// ********** Función para agregar amigos **********
+
+function agregarAmigo() {
+    const inputAmigo = document.getElementById('amigo');
+    const nombreAmigo = inputAmigo.value.trim();
+  
+    //console.log(inputAmigo) // Verificar que este ingresando los datos correctos
+    //console.log(nombreAmigo) // Validar que se este realizando un TRIM si el usuario coloca espacios
+  
+    if (nombreAmigo === '') {
+      alert('Por favor, ingresa un nombre válido.');
+      return;
+    }
+    if (listaAmigos.includes(nombreAmigo)) {
+      alert('Este nombre ya está en la lista.');
+      return;
+    }
+    listaAmigos.push(nombreAmigo);
+    inputAmigo.value = '';
+    actualizarListaAmigos();
+  }
+  
