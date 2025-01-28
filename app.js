@@ -38,3 +38,15 @@ function agregarAmigo() {
     actualizarListaAmigos();
   }
   
+  // ********** Función para actualizar la lista de amigos **********
+
+function actualizarListaAmigos() {
+  const listaAmigosElement = document.getElementById('listaAmigos');
+  listaAmigosElement.innerHTML = '';
+
+  listaAmigos.forEach((amigo) => {
+    const li = document.createElement('li');
+    li.textContent = amigo;
+    listaAmigosElement.appendChild(li);
+  });
+}
