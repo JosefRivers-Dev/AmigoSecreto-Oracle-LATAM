@@ -69,3 +69,16 @@ function sortearAmigo() {
 
   mostrarResultado(amigoSeleccionado);
 }
+
+// ********** Función para mostrar el resultado del sorteo **********
+
+function mostrarResultado(amigo) {
+  const resultadoElement = document.getElementById('resultado');
+  resultadoElement.innerHTML = '';
+
+  //console.log(resultadoElement)
+
+  const li = document.createElement('li');
+  li.textContent = `El amigo secreto sorteado es: ${amigo}`;
+  resultadoElement.appendChild(li);
+}
